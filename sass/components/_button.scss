@@ -1,0 +1,89 @@
+
+.button {
+    margin-top: 3rem;
+    cursor: pointer;
+    width: 25rem;
+    z-index: 5;
+    border-radius: 10px;
+    height: 6rem;
+    text-align: center;
+    color: var(--color-black);
+    letter-spacing: 3px;
+    font-family: var(--font-numericTxt);
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s;
+    z-index: 10;
+    position: relative;
+}
+
+  
+  .button--green, .button--red{
+    width: 25rem;
+    z-index: 5;
+    backface-visibility: hidden;
+    /* color: var(--color-white);
+    border: 1px solid var(--color-white); */
+  }
+  
+  .button--green{
+    border: 1px solid var(--color-green);
+    color: var(--color-white);
+    background-image: linear-gradient(120deg, var(--color-green) 0%, var(--color-green) 50%, var(--color-white) 50%);
+    background-size: 225%;
+  }
+  
+
+  .button--green:hover,
+  .button--green:active{
+    background-position: 100%;
+    color: var(--color-green);
+    transform: translateX(1rem);
+  }
+
+  .button--red{
+    border: 1px solid var(--color-darkRed);
+    color: var(--color-white);
+    background-image: linear-gradient(120deg, var(--color-darkRed) 0%, var(--color-darkRed) 50%, var(--color-white) 50%);
+    background-size: 225%;
+  }
+  .button--red:hover,
+  .button--red:active{
+    background-position: 100%;
+    color: var(--color-darkRed);
+    transform: translateX(1rem);
+  }
+  
+  .formButton.button--red{
+    color: var(--color-white);
+    background-color: var(--color-darkRed);
+    border: 1px solid var(--color-darkRed);
+  }
+
+  .formButton.button--red:hover{
+    background-color: var(--color-white);
+    color: var(--color-darkRed);
+  }
+
+  .formButton.button--green{
+   background-color: var(--color-green);
+   background-image: none;
+   background-size: 100%;
+  }
+
+  .formButton.button--green:hover{
+    background-color: var(--color-white);
+    color: var(--color-green);
+    transform: translateX(0);
+  }
+
+  .disable{
+    cursor: not-allowed;
+  }

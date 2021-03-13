@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+    <title>Mollify | <%= title %></title>
+</head>
+<body>
+   <!------------------ HEADER ----------------->
+<%- include('../partials/header'); %>
+   
+<div class="Form__container">
+    <div
+    data-aos-duration="600"
+    data-aos="fade-left"
+    class="sideContainer__form left__align">
+    <!-- form -->
+   
+
+    <% if(formAgain){ %>
+        <%- include('../partials/formAgain') %>
+     <% } else { %>
+        <h1 class="main__heading heading--form color--green">
+            Career
+        </h1>
+        <%- include('../partials/form') %>
+      <% }%>  
+
+
+ 
+
+    </div>
+
+    <div
+    data-aos-duration="600" 
+    data-aos="fade-right"
+    class="sideContainer__imgContainer imgContainer--career">
+    <h2 class="heading--formSideContainer ">Let's get in Contact</h2>
+    <img class="sideImg  sideImg--contact" src="/img/career.png"  alt="contact photo" />
+    </div>
+</div>
+
+
+<!-- FOOTER STARTS -->
+<%- include('../partials/footer'); %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
+<script src="./js/index.js"></script> 
+</body>
+</html>

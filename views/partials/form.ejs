@@ -1,0 +1,32 @@
+<form autoComplete="off" class="form"  method="POST" action="send" >
+       
+    <input class="title__input" type="text" value="<%= title %>" name="title"/>
+    <!-- inputs -->
+    <div class="inputContainer">
+        <label class="label" for="#name">Enter Name</label>
+        <input id="name" class="input" type="text" placeholder="Enter your name" name="name"/> 
+    </div>
+
+    <div class="inputContainer">
+        <label class="label" for="#email">Enter Email</label>
+        <input id="email" class="input" type="email" placeholder="Enter your Email" name="email"/> 
+    </div>
+
+    <div class="inputContainer">
+        <label class="label" for="#subject">Enter Subject</label>
+        <input id="subject" class="input" type="text" placeholder="Subject" name="subject"/> 
+    </div>
+
+    <div class="inputContainer">
+        <label class="label" for="#message">Enter Message</label>
+        <textarea id="message" class="input input--textArea" type="text" placeholder="Write Message" name="message"></textarea> 
+    </div>
+
+
+    <Button 
+    class="button <%= title == 'career' ? 'button--green' : 'button--red' %>"
+    type="submit">
+    Submit
+    </Button>
+    
+    </form>

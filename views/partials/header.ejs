@@ -1,0 +1,87 @@
+<header class='header'>
+
+    <div class='logo__box'>
+      <a>
+        <img class='logo'  src="/img/logo.png" alt="logo" />
+      </a>
+    </div>
+
+<div class="nav--header">
+   <!-- NAVBAR -->
+   <nav class="nav">
+
+    <div class="navItem">
+     <a 
+     class="<%= title == 'home' ? 'navbar__link--active' : '' %>" 
+     href="/">
+     Home
+    </a> 
+    </div>
+
+    <div  class="navItem">
+       <a
+       class="<%= title == 'team' ? 'navbar__link--active' : '' %>" 
+       href="/team" >Team</a>
+    </div>
+
+    <div  class="navItem">
+        <a
+        class="<%= title == 'contact' ? 'navbar__link--active' : '' %>" 
+        href="/contact">Contact</a>
+    </div>
+
+    <div class="navItem">
+       <a
+       class="<%= title == 'career' ? 'navbar__link--active' : '' %>" 
+       href="/career">Career</a>
+    </div>
+
+</nav>  
+</div>
+
+<!-- Burger icon  -->
+<div  class='burger__icon'>
+        <div class="burger__icon--line burger__icon--line1" ></div>
+        <div class="burger__icon--line burger__icon--line2" ></div>
+        <div class="burger__icon--line burger__icon--line3" ></div>
+</div>
+
+
+</header>
+
+<nav class='mobileNav__container'>
+        
+            <div class='mobileNav__itemsContainer'>
+            <div class="mobileNavItem">
+                <a href="/home">Home</a>
+            </div>
+
+            <div class="mobileNavItem">
+                <a href="/team">Team</a>
+            </div>
+
+            <div class="mobileNavItem">
+                <a href="/contact">Contact</a>
+            </div>
+
+            <div class="mobileNavItem">
+                <a href="/career">Career</a>
+            </div>
+            </div>
+</nav>
+
+<script>
+    const logo = document.querySelector('.logo__box');
+    let title = '<%- title %>'
+    if('<%- title %>' != 'home'){
+        logo.children[0].href = '/'
+    }else{
+        logo.addEventListener('click', () => (
+            window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+            })
+        ))
+    }
+</script>

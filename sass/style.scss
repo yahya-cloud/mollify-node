@@ -1,0 +1,23 @@
+@import "base";
+
+
+// SECTIONS /////////////////////
+@import "header";
+@import "footer";
+@import "mobileNav";
+
+// COMPONENTS /////////////////////
+@import "./components/navbar";
+@import "./components/button";
+@import "./components/svg";
+@import "./components/statCard";
+@import "./components/person";
+@import "./components/form";
+
+// HOMEPAGE /////////////////////
+@import "./HomePage/home";
+@import './HomePage/about';
+@import './HomePage/stats';
+
+//TEAM PAGE /////////////////////
+@import "./teamPage";

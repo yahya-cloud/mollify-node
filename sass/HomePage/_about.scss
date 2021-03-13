@@ -1,0 +1,100 @@
+.about__container{
+    width: 100%;
+    padding: 2rem ;
+    height: min-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8rem;;
+    grid-row-gap: 10rem;
+    align-items: center;
+    margin-bottom: 10rem;
+}
+
+.aboutHeading__container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 6rem;
+}
+
+// DESCRIPTION CSS
+.description__container{
+    display: flex;
+    margin: 3rem;
+    margin-top: 8rem;
+    align-items: center;
+  }
+  
+  .descriptionText__container{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1;
+  }
+  
+  .descriptionSvg__container{
+      flex: 1;
+  }
+  
+  .subHeading--description{
+      margin: 0rem 0rem 2rem 9rem;
+  }
+  
+  .paragraph--description{
+      margin-left: 9rem;
+      width: 75%;
+  }
+  
+
+  .left__align{
+    order: 3;
+  }
+
+  
+
+
+
+@media only screen and (max-width: 600px){
+    .paragraph--description{
+        width: 100%;
+    }
+
+    .descriptionSvg__container{
+        width: 90%;
+    }
+}
+
+
+@media only screen and (max-width: 900px){
+    .about__container{
+      grid-row-gap: 5rem;
+    }
+    
+  .left__align{
+    order: 0;
+  }
+
+    .description__container{
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        }
+    
+        .descriptionText__container{
+            align-items: center;
+        }
+    
+        .subHeading--description{
+            margin-left: 0rem;
+        }
+    
+        .paragraph--description{
+            margin-left: 0rem;
+            text-align: center;
+        }
+        .descriptionSvg__container{
+            margin-top: 5rem;
+            width: 100%;
+        }
+        
+}

@@ -1,0 +1,139 @@
+.person__infoContainer{
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-column-gap: 5rem;
+}
+
+.person{
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid var(--color-grey1);
+    border-left: none;
+    border-right: none;
+    position: relative;
+}
+
+.person__info{
+    display: flex;
+    justify-content: center;
+}
+
+.iconBox{
+    width: 6rem;
+    height: 13rem;
+    margin: 1rem;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.personImg{
+    
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+    width: 30rem;
+    height: 30rem;
+
+    &--1{
+        background-image: url("../img/person1.jpg");
+    }
+
+    &--2{
+        background-image: url("../img/person2.jpg");
+    }
+
+    &--3{
+        background-image: url("../img/person3.jpg");
+    }
+}
+.textBox{
+    
+    margin-left: 5rem;
+    height: 22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.textBox__name{
+    font-family: var( --font-heading);
+    font-weight: 700;
+    color: var(--color-grey3);
+    font-size: 3.6rem;
+}
+
+.textBox__position{
+    font-family: var( --font-heading);
+    font-weight: 500;
+    color:var(--color-grey2);
+    font-size: 1.8rem;
+    margin:1rem 0rem;
+}
+
+.textBox__info{
+   color: var(--color-grey1);
+}
+
+
+
+
+@media only screen and (max-width: 1000px){
+    .person__infoContainer{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .textBox{
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 600px){
+
+    .person__infoContainer{
+       grid-template-columns: 1fr;
+       grid-row-gap: 5rem;
+       padding: 2rem;
+    }
+
+    .personImg{
+        height: 25rem;
+        width: 25rem;
+    }
+
+    .person__info{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .iconBox{
+        height: min-content;
+        width: 80%;
+        flex-direction: row;
+        margin: 0;
+        margin-top: 3rem;
+    }
+
+    .textBox{
+        height: min-content;
+        align-items: center;
+        margin: 0;
+    }
+
+    .textBox__info{
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+
+}
