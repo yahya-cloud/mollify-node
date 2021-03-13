@@ -3,7 +3,7 @@ const sass = require('node-sass-middleware');
 const sendMail = require('./sendMail');
 const routes = require('./routes');
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 //SETTING UP SASS MIDDLEWARE
 app.use(
