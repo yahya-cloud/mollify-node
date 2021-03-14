@@ -13,7 +13,7 @@ module.exports = function(app) {
         res.render('pages/career', {title:"career", formAgain: false});
     })
     .get('/loaderio-dc8495f4e5d957629862cd56d6022112.html', function(req, res){
-        res.render('loaderio-dc8495f4e5d957629862cd56d6022112')
+        res.render('pages/loaderio-dc8495f4e5d957629862cd56d6022112')
     })
     
 };
