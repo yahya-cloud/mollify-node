@@ -3,15 +3,12 @@ const nodemailer = require('nodemailer');
 const {google} = require('googleapis');
 
 module.exports = function(app) {
-  const clientId = '398702736762-1cdu573v9n1is3e92vgm5cnei7rtv2uf.apps.googleusercontent.com'
-  const clientSecret = '99VvTOzSAsuooRRDSIGUEYJL'
-  const redirectUri = 'https://developers.google.com/oauthplayground'
-  const refreshToken = '1//04-EN3cYbb7YMCgYIARAAGAQSNwF-L9IruDM334imURNtM--YE6aIhvX6CHw3UySFh9BnFTyr_MgZLOonUui9arQGgaXK6fXyMhs'
+ 
 
     app.post('/send', async (req, res) => {
 
-      const oAuth2Client  = new google.auth.OAuth2(clientId, clientSecret, redirectUri);
-      oAuth2Client.setCredentials({refresh_token: refreshToken});
+      const oAuth2Client  = new google.auth.OAuth2( process.env.CLIENT_ID, process.env.CLIENT_SECRET, process.env.REDIRECT);
+      oAuth2Client.setCredentials({refresh_token: process.env.REFRESH_TOKEN});
  
       try{
       const accessToken = await oAuth2Client.getAccessToken();
@@ -31,9 +28,9 @@ module.exports = function(app) {
           auth: {
             type: 'OAUTH2',
             user: 'mollifywork@gmail.com',
-            clientId: clientId,
-            clientSecret:  clientSecret,
-            refreshToken: refreshToken,
+            clientId: process.env.CLIENT_ID,
+            clientSecret:  process.env.CLIENT_SECRET,
+            refreshToken: process.env.REFRESH_TOKEN,
             accessToken: accessToken
           }
         });
