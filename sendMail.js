@@ -6,7 +6,7 @@ module.exports = function(app) {
   const redirectUri = 'https://developers.google.com/oauthplayground';
   const clientId = '398702736762-1cdu573v9n1is3e92vgm5cnei7rtv2uf.apps.googleusercontent.com';
   const clientSecret =  "99VvTOzSAsuooRRDSIGUEYJL";
-  const refreshToken = process.env.REFRESH_TOKEN;
+  const refreshToken = '1//04-EN3cYbb7YMCgYIARAAGAQSNwF-L9IruDM334imURNtM--YE6aIhvX6CHw3UySFh9BnFTyr_MgZLOonUui9arQGgaXK6fXyMhs';
   
     app.post('/send', async (req, res) => {
 
