@@ -3,11 +3,11 @@ const nodemailer = require('nodemailer');
 const {google} = require('googleapis');
 
 module.exports = function(app) {
- 
-
+  const redirectUri = 'https://developers.google.com/oauthplayground';
+  
     app.post('/send', async (req, res) => {
 
-      const oAuth2Client  = new google.auth.OAuth2( process.env.CLIENT_ID, process.env.CLIENT_SECRET, process.env.REDIRECT);
+      const oAuth2Client  = new google.auth.OAuth2( process.env.CLIENT_ID, process.env.CLIENT_SECRET, redirectUri);
       oAuth2Client.setCredentials({refresh_token: process.env.REFRESH_TOKEN});
  
       try{
