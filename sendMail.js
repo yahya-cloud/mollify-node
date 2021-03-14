@@ -4,11 +4,14 @@ const {google} = require('googleapis');
 
 module.exports = function(app) {
   const redirectUri = 'https://developers.google.com/oauthplayground';
+  const clientId = '398702736762-1cdu573v9n1is3e92vgm5cnei7rtv2uf.apps.googleusercontent.com';
+  const clientSecret =  process.env.CLIENT_SECRET;
+  const refreshToken = process.env.REFRESH_TOKEN;
   
     app.post('/send', async (req, res) => {
 
-      const oAuth2Client  = new google.auth.OAuth2( process.env.CLIENT_ID, process.env.CLIENT_SECRET, redirectUri);
-      oAuth2Client.setCredentials({refresh_token: process.env.REFRESH_TOKEN});
+      const oAuth2Client  = new google.auth.OAuth2( clientId, clientSecret, redirectUri);
+      oAuth2Client.setCredentials({refresh_token:refreshToken});
  
       try{
       const accessToken = await oAuth2Client.getAccessToken();
@@ -28,9 +31,9 @@ module.exports = function(app) {
           auth: {
             type: 'OAUTH2',
             user: 'mollifywork@gmail.com',
-            clientId: process.env.CLIENT_ID,
-            clientSecret:  process.env.CLIENT_SECRET,
-            refreshToken: process.env.REFRESH_TOKEN,
+            clientId: clientId,
+            clientSecret:  clientSecret,
+            refreshToken: refreshToken,
             accessToken: accessToken
           }
         });
