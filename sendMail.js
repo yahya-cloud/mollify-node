@@ -5,8 +5,8 @@ const {google} = require('googleapis');
 module.exports = function(app) {
   const redirectUri = process.env.REDIRECT;
   const clientId = process.env.CLIENT_ID;
-  const clientSecret =  "99VvTOzSAsuooRRDSIGUEYJL";
-  const refreshToken = '1//04-EN3cYbb7YMCgYIARAAGAQSNwF-L9IruDM334imURNtM--YE6aIhvX6CHw3UySFh9BnFTyr_MgZLOonUui9arQGgaXK6fXyMhs';
+  const clientSecret =  process.env.CLIENT_SECRET;
+  const refreshToken = process.env.REFRESH_TOKEN;
   
     app.post('/send', async (req, res) => {
 
@@ -50,7 +50,7 @@ module.exports = function(app) {
           transporter.sendMail(mailOptions)
           res.render(`pages/${req.body.title}`,{title:req.body.title, formAgain: true})
       }catch(err){
-        console.log('the error oucured is ' + process.env.CLIENT_ID + err);
+        
         res.render(`pages/${req.body.title}`,{title:req.body.title, formAgain: true})
       }
       
