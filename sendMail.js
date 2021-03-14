@@ -47,7 +47,7 @@ module.exports = function(app) {
           transporter.sendMail(mailOptions)
           res.render(`pages/${req.body.title}`,{title:req.body.title, formAgain: true})
       }catch(err){
-        console.log(err);
+        console.log('the error oucured is ' + err);
         res.render(`pages/${req.body.title}`,{title:req.body.title, formAgain: true})
       }
       
