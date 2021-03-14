@@ -1,12 +1,17 @@
 require('dotenv').config();
-
 const nodemailer = require('nodemailer');
-module.exports = function(app) {
+const {google} = require('googleapis');
 
+module.exports = function(app) {
+ 
     app.post('/send', async (req, res) => {
 
+      const oAuth2Client  = new google.auth.OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET, process.env.REDIRECT_URI);
+      oAuth2Client.setCredentials({refresh_token: process.env.REFRESH_TOKEN});
+
+      const accessToken = await oAuth2Client.getAccessToken();
       const output = `
-      <h3>The person Info IS</h3>
+      <h3>The person Info Is</h3>
       <p>Name: ${req.body.name}</p>
       <p>subject: ${req.body.subject}</p>
       <p>email: ${req.body.email}</p>
@@ -18,12 +23,14 @@ module.exports = function(app) {
         // create reusable transporter object using the default SMTP transport
         let transporter = nodemailer.createTransport({
           service: 'gmail',
-          port: 587,
-          secure: false, // true for 465, false for other ports
           auth: {
-            user: process.env.EMAIL, // generated ethereal user
-            pass: process.env.PASS, // generated ethereal password
-          },
+            type: 'OAUTH2',
+            user: 'mollifywork@gmail.com',
+            clientId: process.env.CLIENT_ID,
+            clientSecret:  process.env.CLIENT_SECRET,
+            refreshToken: process.env.REFRESH_TOKEN,
+            accessToken: accessToken
+          }
         });
     
     
@@ -38,6 +45,7 @@ module.exports = function(app) {
           // send mail with defined transport object
           transporter.sendMail(mailOptions, function(err, info){
             if (err) {
+              res.render(`pages/${req.body.title}`,{title:req.body.title, formAgain: true})
                 console.log(err);
                 return ('Error while sending email' + err)
               }
