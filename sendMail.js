@@ -10,8 +10,8 @@ module.exports = function(app) {
 
     app.post('/send', async (req, res) => {
 
-      const oAuth2Client  = new google.auth.OAuth2(clientId, clientSecret, redirectUri);
-      oAuth2Client.setCredentials({refresh_token: refreshToken});
+      const oAuth2Client  = new google.auth.OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET, process.env.REDIRECT_URI);
+      oAuth2Client.setCredentials({refresh_token: process.env.REFRESH_TOKEN});
 
       const accessToken = await oAuth2Client.getAccessToken();
       const output = `
@@ -30,9 +30,9 @@ module.exports = function(app) {
           auth: {
             type: 'OAUTH2',
             user: 'mollifywork@gmail.com',
-            clientId: clientId,
-            clientSecret:  clientSecret,
-            refreshToken: refreshToken,
+            clientId: process.env.CLIENT_ID,
+            clientSecret:  process.env.CLIENT_SECRET,
+            refreshToken: process.env.REFRESH_TOKEN,
             accessToken: accessToken
           }
         });
