@@ -53,13 +53,8 @@ if(ctx){
                 }]
         },
         options: {
-            title:{
-                display:true, 
-                padding:15,
-                text: "Per 100% people",
-                fontColor:"#8f8f8f",
-                fontSize: 20
-                },
+         
+           
                 
                 layout:{
                     padding:{
